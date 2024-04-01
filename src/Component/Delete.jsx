@@ -1,9 +1,10 @@
 import React from "react";
 import "./delete.css";
 import { useEmailContext } from "./Content";
+import { useNavigate } from "react-router-dom/dist";
 const Delete = () => {
   const { isToggled, setIsToggled, threadid,token } = useEmailContext();
-
+  const navigat = useNavigate()
   const deletebox = () => {
     setIsToggled(!isToggled);
   };
@@ -23,6 +24,8 @@ const Delete = () => {
           
         }
         alert("Thread deleted successfully.")
+        navigat("/home")
+        window.location.reload()
         console.log("Thread deleted successfully.");
       })
       .catch((error) => {

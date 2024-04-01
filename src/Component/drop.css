@@ -1,0 +1,29 @@
+.drop {
+  width: 300px;
+  height: 200px;
+  top: 120px;
+  /* left: 400px; */
+  padding: 12px;
+  gap: 16px;
+  border-radius: 8px;
+  border: 1px;
+  opacity: 0px;
+  background: #1e1f22;
+  border: 1px solid #343a40;
+  color: white;
+  position: absolute;
+  /* top: 200px; */
+  z-index: 999;
+  left: 900px;
+  margin-top: 5px;
+  /* border: 2px solid red; */
+}
+.detel {
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18.6px;
+  text-align: left;
+  color: #D3D7DB;
+
+}

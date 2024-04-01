@@ -11,12 +11,16 @@ import TreadData from "./ThredId";
 import { useEmailContext } from "./Content";
 import Replay from "./Replay";
 import Delete from "./Delete";
+import Dropdown from "./Dropdown";
 const Main = () => {
   const { emails, email, name, isMessageBoxOpen, isToggled } =
     useEmailContext();
-
+    const [isDrop, SetDrop] = useState(false)
   return (
     <>
+      <div>
+        {/* <Dropdown/> */}
+      </div>
       <div>{isToggled && <Delete />}</div>
       <div
         className={`main-div relative flex ${
