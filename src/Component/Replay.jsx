@@ -58,7 +58,7 @@ const Replay = () => {
   return (
     <div className="replay-box">
       <div className="f-div flex justify-between">
-        <div className="text-[#BAB9BD] cursor-pointer">Reply</div>
+        <div className="text-[#BAB9BD] ">Reply</div>
         <div
           className="text-[#FFFFFF] hover:text-[#BAB9BD]"
           onClick={handleClick}
@@ -87,8 +87,8 @@ const Replay = () => {
       </div>
 
       <div className="l-div flex  ">
-        <div className="send-btn flex text-[#FFFFFF] justify-around" onClick={handleSubmit}>
-          <div>Send </div>
+        <div className="send-btn cursor-pointer flex text-[#FFFFFF] justify-around" onClick={handleSubmit}>
+          <div className="cursor-pointer">Send </div>
           <HiChevronDown className="text-[#FFFFFF]" size={25} />
         </div>
         <div>
