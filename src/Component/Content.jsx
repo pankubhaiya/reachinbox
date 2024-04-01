@@ -1,5 +1,5 @@
 // EmailContext.js
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const EmailContext = createContext();
 
@@ -11,49 +11,62 @@ export const EmailProvider = ({ children }) => {
   const [emailDetails, setEmailDetails] = useState([]);
   const [detailsLoading, setDetailsLoading] = useState(false);
   const [detailsError, setDetailsError] = useState(null);
-  const [email,setEmail] = useState("")
-  const [name ,setName] = useState("")
-  const [threadid ,setthreadid] = useState(null)
-  console.log(name,email)
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiamFpbmtyaXNoYW5rdW1hcjZAZ21haWwuY29tIiwiaWQiOjM3LCJmaXJzdE5hbWUiOiJrcmlzaGFuIGt1bWFyIiwibGFzdE5hbWUiOiJqYWluIn0sImlhdCI6MTcxMTg5MjIzOCwiZXhwIjoxNzQzNDI4MjM4fQ.CRrjJA6x9AaL6kUoV1rVeGUW93x6uNe0SNm4TAUDoOk";
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [threadid, setthreadid] = useState(null);
+  const [token, setToken] = useState('');
+  console.log(name, email);
+  useEffect(() => {
+    // Check if the token exists in local storage
+    const tokenFromStorage = localStorage.getItem("token");
 
+    // If the token exists in local storage, set it in the component's state
+    if (tokenFromStorage) {
+      setToken(tokenFromStorage);
+    }
+  }, []);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://hiring.reachinbox.xyz/api/v1/onebox/list', {
-          headers: {
-            'Authorization': `Bearer ${token}`
+        const response = await fetch(
+          "https://hiring.reachinbox.xyz/api/v1/onebox/list",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
           }
-        });
+        );
         const data = await response.json();
         setEmails(data.data);
-        console.log(data.data)
-     
+        console.log(data.data);
+
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
         setLoading(false);
       }
     };
 
     fetchData();
   }, []);
- 
+
   const fetchEmailDetails = async (threadId) => {
     setDetailsLoading(true);
     try {
-      const response = await fetch(`https://hiring.reachinbox.xyz/api/v1/onebox/messages/${threadId}`, {
-        headers: {
-          'Authorization': `Bearer ${token}`
+      const response = await fetch(
+        `https://hiring.reachinbox.xyz/api/v1/onebox/messages/${threadId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
-      });
+      );
       const data = await response.json();
       setEmailDetails(data.data);
       setDetailsLoading(false);
-      return data
+      return data;
     } catch (error) {
-      console.error('Error fetching email details:', error);
+      console.error("Error fetching email details:", error);
       setDetailsError(error);
       setDetailsLoading(false);
     }
@@ -87,17 +100,36 @@ export const EmailProvider = ({ children }) => {
     };
 
     // Add event listener to the document
-    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
 
     // Clean up the event listener
     return () => {
-      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, []); // Empty dependency array ensures the effect runs only once
   return (
-    <EmailContext.Provider value={{ token,emails, loading, emailDetails, detailsLoading, detailsError,email,name,isMessageBoxOpen,isToggled,threadid ,setthreadid,setIsToggled,setIsMessageBoxOpen,setEmail,setName, fetchEmailDetails, }}>
+    <EmailContext.Provider
+      value={{
+        token,
+        emails,
+        loading,
+        emailDetails,
+        detailsLoading,
+        detailsError,
+        email,
+        name,
+        isMessageBoxOpen,
+        isToggled,
+        threadid,
+        setthreadid,
+        setIsToggled,
+        setIsMessageBoxOpen,
+        setEmail,
+        setName,
+        fetchEmailDetails,
+      }}
+    >
       {children}
     </EmailContext.Provider>
   );
 };
-
