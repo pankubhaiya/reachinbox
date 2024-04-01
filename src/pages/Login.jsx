@@ -5,17 +5,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const [token, setToken] = useState("");
 
-  useEffect(() => {
-    // Parse the URL to extract the token
-    const urlParams = new URLSearchParams(window.location.search);
-    const tokenFromUrl = urlParams.get("token");
-    
-    // Set the token in the component's state
-    if (tokenFromUrl) {
-      setToken(tokenFromUrl);
-    }
-  }, []);
-  console.log("token"+ token)
+  
   return (
     <div className="w-full h-fit bg-black">
       <div className="head-div">
