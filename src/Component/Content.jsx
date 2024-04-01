@@ -25,6 +25,7 @@ export const EmailProvider = ({ children }) => {
       setToken(tokenFromStorage);
     }
   }, []);
+  console.log(tokenFromStorage)
   useEffect(() => {
     const fetchData = async () => {
       try {
