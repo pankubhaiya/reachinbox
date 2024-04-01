@@ -1,6 +1,6 @@
-.drop {
-  width: 250px;
-  height: 180px;
+.mdrop {
+  width: 210px;
+  height: 90px;
   top: 130px;
   /* left: 400px; */
   padding: 12px;
@@ -14,17 +14,16 @@
   position: absolute;
   /* top: 200px; */
   z-index: 999;
-  left: 950px;
+  left: 1040px;
   margin-top: 5px;
- 
+
   /* border: 2px solid red; */
 }
-.detel {
+.mdetel {
   font-family: Open Sans;
   font-size: 16px;
   font-weight: 600;
   line-height: 18.6px;
   text-align: left;
-  color: #D3D7DB;
-
+  color: #d3d7db;
 }

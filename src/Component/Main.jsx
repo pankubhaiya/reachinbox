@@ -42,7 +42,9 @@ const Main = () => {
         setError(error.message);
       });
   };
-
+  const hadledrop = ()=>{
+    SetDrop(!isDrop)
+  }
   // Define your click handler function
   const handleClick = () => {
     // Place the logic you want to execute when the button is clicked here
@@ -52,7 +54,7 @@ const Main = () => {
   };
   return (
     <>
-      <div>{/* <Dropdown/> */}</div>
+      <div>{isDrop && <Dropdown/>}</div>
       <div>{isToggled && <Delete />}</div>
       <div
         className={`main-div relative flex ${
@@ -157,8 +159,8 @@ const Main = () => {
                   </button>
                 </div>
               </div>
-              <div className="move flex">
-                <div className="flex m-auto">
+              <div className="move flex cursor-pointer" onClick={hadledrop}>
+                <div className="flex m-auto" >
                   <div class="font-open-sans text-xs py-2 font-semibold leading-5 tracking-tight text-left text-[#D3D7DB] ">
                     Move
                   </div>

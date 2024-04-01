@@ -1,7 +1,13 @@
 /* * {
   color: white;
 } */
+.hidden-div {
+  display: none;
+}
 
+.hover-trigger:hover + .hidden-div {
+  display: block;
+}
 .inbox {
   width: 22%;
   height: Fixed (821px) px;
