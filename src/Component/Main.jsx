@@ -13,14 +13,46 @@ import Replay from "./Replay";
 import Delete from "./Delete";
 import Dropdown from "./Dropdown";
 const Main = () => {
-  const { emails, email, name, isMessageBoxOpen, isToggled } =
+  const { emails, email, name, isMessageBoxOpen, isToggled, token } =
     useEmailContext();
-    const [isDrop, SetDrop] = useState(false)
+  const [isDrop, SetDrop] = useState(false);
+  const fetchRefreshApi = () => {
+    // Make the GET request
+    console.log("refresh");
+    fetch("https://hiring.reachinbox.xyz/api/v1/onebox/reset", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        // Check if response is ok
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        // Parse response JSON
+        return response.json();
+      })
+      .then((data) => {
+        // Set response data in state
+        alert("Reset the data");
+         window.location.reload()
+      })
+      .catch((error) => {
+        // Handle any errors
+        setError(error.message);
+      });
+  };
+
+  // Define your click handler function
+  const handleClick = () => {
+    // Place the logic you want to execute when the button is clicked here
+    console.log("Button clicked!");
+    // Call your fetch function here if needed
+    fetchRefreshApi();
+  };
   return (
     <>
-      <div>
-        {/* <Dropdown/> */}
-      </div>
+      <div>{/* <Dropdown/> */}</div>
       <div>{isToggled && <Delete />}</div>
       <div
         className={`main-div relative flex ${
@@ -44,8 +76,8 @@ const Main = () => {
               </p>
             </div>
             <div>
-              <div className="refresh-div">
-                <MdOutlineRefresh size={20} />
+              <div className="refresh-div hover:bg-[#FFFFF]">
+                <MdOutlineRefresh size={20} onClick={handleClick}  />
               </div>
             </div>
           </div>
