@@ -27,6 +27,7 @@ export const EmailProvider = ({ children }) => {
     // If the token exists in local storage, set it in the component's state
     if (tokenFromStorage) {
       setToken(tokenFromStorage);
+      navigat("/home")
     }else{
       navigat("/")
     }
