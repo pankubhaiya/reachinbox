@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./login.css";
 import { FaGoogle } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 const Login = () => {
   const [token, setToken] = useState("");
@@ -9,13 +10,13 @@ const Login = () => {
     // Parse the URL to extract the token
     const urlParams = new URLSearchParams(window.location.search);
     const tokenFromUrl = urlParams.get("token");
-    
+
     // Set the token in the component's state
     if (tokenFromUrl) {
       setToken(tokenFromUrl);
     }
   }, []);
-  console.log("token"+ token)
+  console.log("token" + token);
   return (
     <div className="w-full h-fit bg-black">
       <div className="head-div">
@@ -32,8 +33,8 @@ const Login = () => {
 
           <a href="https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reachinbox-plum.vercel.app/home">
             <div className="google">
-              <FaGoogle  className="google-icon text-white" />
-              <button className="google-text">Sign Up with Google</button>
+              <FcGoogle size={35} className="google-icon" />
+              <button className="google-text mt-1">Sign Up with Google</button>
             </div>
           </a>
           <div className="account-btn">
@@ -41,7 +42,9 @@ const Login = () => {
           </div>
           <div className="sign-div">
             <p>
-             <Link to="/home">Already have an account?<span>Sign In</span></Link> 
+              <Link to="/home">
+                Already have an account?<span>Sign In</span>
+              </Link>
             </p>
           </div>
         </div>

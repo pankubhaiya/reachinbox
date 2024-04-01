@@ -35,16 +35,16 @@ const Main = () => {
       .then((data) => {
         // Set response data in state
         alert("Reset the data");
-         window.location.reload()
+        window.location.reload();
       })
       .catch((error) => {
         // Handle any errors
         setError(error.message);
       });
   };
-  const hadledrop = ()=>{
-    SetDrop(!isDrop)
-  }
+  const hadledrop = () => {
+    SetDrop(!isDrop);
+  };
   // Define your click handler function
   const handleClick = () => {
     // Place the logic you want to execute when the button is clicked here
@@ -54,7 +54,7 @@ const Main = () => {
   };
   return (
     <>
-      <div>{isDrop && <Dropdown/>}</div>
+      <div>{isDrop && <Dropdown />}</div>
       <div>{isToggled && <Delete />}</div>
       <div
         className={`main-div relative flex ${
@@ -66,21 +66,26 @@ const Main = () => {
         <div className="inbox ">
           <div className="flex">
             <div>
-              <div className="flex">
-                <h1>All Inbox(s)</h1>
+              <div className="flex ">
+                <h1 className="font-inter text-base font-semibold leading-5">
+                  All Inbox(s)
+                </h1>
                 <button type="button">
                   <FiChevronDown size={24} className="text-white" />
                 </button>
               </div>
               <p className="select">
                 {" "}
-                <span className="text-[#FFFFFF]">25/25</span> Inboxes selected
+                <span className="text-[#FFFFFF]  leading-5">25/25</span> Inboxes
+                selected
               </p>
             </div>
-            <div onClick={handleClick}>
-              <div className="refresh-div hover:bg-[#FFFFF]">
-                <MdOutlineRefresh size={20}   />
-              </div>
+
+            <div
+              className="refresh-div hover:bg-[#FFFF] hover:text-black"
+              onClick={handleClick}
+            >
+              <MdOutlineRefresh size={20} />
             </div>
           </div>
           <div class="relative mt-4">
@@ -160,7 +165,7 @@ const Main = () => {
                 </div>
               </div>
               <div className="move flex cursor-pointer" onClick={hadledrop}>
-                <div className="flex m-auto" >
+                <div className="flex m-auto">
                   <div class="font-open-sans text-xs py-2 font-semibold leading-5 tracking-tight text-left text-[#D3D7DB] ">
                     Move
                   </div>

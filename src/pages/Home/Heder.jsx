@@ -26,7 +26,7 @@ const Heder = () => {
                   </label>
                 </div>
                 <div className="flex gap-2 ">
-                  <p className="text-white">Tim’s Workspace</p>
+                  <p className="time text-white ">Tim’s Workspace</p>
                   <button type="button">
                     <FiChevronDown size={24} className="text-white" />
                   </button>

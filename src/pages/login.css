@@ -66,9 +66,10 @@ h1 {
 }
 .google-icon {
   width: 23.5px;
-  height: 32px;
-  padding: 5px 0px 6px 7.75px;
+  height: 36px;
+  /* padding: 5px 0px 6px 7.75px; */
   gap: 0px;
+  
   /* opacity: 0px; */
 }
 .google-text {
@@ -90,7 +91,6 @@ h1 {
   padding: 13px 35px 13px 35px;
   gap: 10px;
   border-radius: 4px;
-  /* opacity: 0px; */
   justify-content: center;
   margin: auto;
   margin-top: 50px;
@@ -99,6 +99,7 @@ h1 {
     #4b63dd -2.99%,
     rgba(5, 36, 191, 0.99) 95.8%
   );
+  font:bold;
 }
 .sign-div {
   width: 70%;

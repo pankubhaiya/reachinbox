@@ -28,9 +28,10 @@ export const EmailProvider = ({ children }) => {
     if (tokenFromStorage) {
       setToken(tokenFromStorage);
       navigat("/home")
-    }else{
-      navigat("/")
     }
+    // else{
+    //   navigat("/")
+    // }
     const fetchData = async () => {
       try {
         const response = await fetch(
