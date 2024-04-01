@@ -14,8 +14,10 @@ export const EmailProvider = ({ children }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [threadid, setthreadid] = useState(null);
-  const [token, setToken] = useState('');
+  const [Token, setToken] = useState('');
   console.log(name, email);
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiamFpbmtyaXNoYW5rdW1hcjZAZ21haWwuY29tIiwiaWQiOjM3LCJmaXJzdE5hbWUiOiJrcmlzaGFuIGt1bWFyIiwibGFzdE5hbWUiOiJqYWluIn0sImlhdCI6MTcxMTg5MjIzOCwiZXhwIjoxNzQzNDI4MjM4fQ.CRrjJA6x9AaL6kUoV1rVeGUW93x6uNe0SNm4TAUDoOk";
   useEffect(() => {
     // Check if the token exists in local storage
     const tokenFromStorage = localStorage.getItem("token");
@@ -25,7 +27,6 @@ export const EmailProvider = ({ children }) => {
       setToken(tokenFromStorage);
     }
   }, []);
-  // console.log(tokenFromStorage)
   useEffect(() => {
     const fetchData = async () => {
       try {
