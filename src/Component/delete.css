@@ -1,0 +1,79 @@
+.delete-div {
+  width: 500px;
+  height: 300px;
+  top: 256px;
+  left: 499px;
+  padding: 32px 24px 32px 24px;
+  gap: 16px;
+  border-radius: 8px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  /* opacity: 0px; */
+  background: linear-gradient(180deg, #141517 0%, #232528 100%);
+  border: 1px solid;
+  border-image-source: linear-gradient(180deg, #484e53 0%, #2f3338 100%);
+  position: absolute;
+  top: 200px;
+  z-index: 999;
+  left: 600px;
+  /* border: 2px solid red; */
+  backdrop-filter: blur(5px);
+  margin: auto;
+  text-align: center;
+
+
+}
+.heading-div {
+  width: Fixed (395px) px;
+  height: Hug (33px) px;
+  gap: 8px;
+  opacity: 0px;
+  font-family: Open Sans;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 32.68px;
+  text-align: center;
+  color: #ffffff;
+  /* background: linear-gradient(180deg, #141517 0%, #232528 100%); */
+}
+
+.pera {
+  width: Hug (213px) px;
+  height: Hug (40px) px;
+  gap: 12px;
+  opacity: 0px;
+  font-family: Open Sans;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20.15px;
+  text-align: left;
+  color: #e8e8e8;
+  margin-top: 30px;
+  /* margin: auto; */
+  text-align: center;
+}
+
+.cancel {
+  width: Hug (119px) px;
+  height: Hug (48px) px;
+  left: 52.5px;
+  padding: 13px 37px 13px 37px;
+  gap: 10px;
+  border-radius: 4px 0px 0px 0px;
+  opacity: 0px;
+  background: #25262b;
+  color: #ffffff;
+  cursor: pointer;
+}
+.delete {
+    width: Hug (119px) px;
+    height: Hug (48px) px;
+    left: 52.5px;
+    padding: 13px 37px 13px 37px;
+    gap: 10px;
+    border-radius: 4px 0px 0px 0px;
+    opacity: 0px;
+    background: #25262b;
+    color: #ffffff;
+    background: linear-gradient(91.73deg, #FA5252 -2.99%, #A91919 95.8%);
+    cursor: pointer;
+}

@@ -1,0 +1,171 @@
+.head-div {
+  width: Fill(1, 440px) px;
+  height: Fixed(64px) px;
+  padding: 10px 100px 10px 100px;
+  gap: 0px;
+  border: 0px 0px 1px 0px;
+  justify-content: center;
+  /* opacity: 0px; */
+  border: 1px solid #25262b;
+  background-color: #000000;
+}
+
+.logo {
+  width: 250px;
+  height: 44px;
+  gap: 0px;
+  opacity: 0px;
+  margin: auto;
+}
+.mid-div {
+  width: Fill (1, 440px) px;
+  height: 80vh;
+  padding: 59px 29px 59px 29px;
+  gap: 150px;
+  border-radius: 4px 0px 0px 0px;
+  /* opacity: 0px; */
+  background-color: #000000;
+}
+
+.data-div {
+  width: 440px;
+  height: 300px;
+  padding: 24px 40px 40px 40px;
+  gap: 48px;
+  border-radius: 17px;
+  border: 1px solid #343a40;
+  /* opacity: 0px; */
+  margin: auto;
+  /* margin-top: 80px; */
+  background: linear-gradient(138.97deg, #111214 5.16%, #121212 105.18%);
+}
+h1 {
+  font-family: Open Sans;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 31px;
+  width: 380px;
+  height: 31px;
+  gap: 0px;
+  /* opacity: 0px; */
+  color: #ffffff;
+  text-align: center;
+}
+.google {
+  width: Fill (380px) px;
+  height: Hug (48px) px;
+  padding: 8px 16px 8px 16px;
+  gap: 10px;
+  border-radius: 4px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  /* opacity: 0px; */
+  margin-top: 20px;
+  border: 1px solid #707172;
+  justify-content: center;
+  display: flex;
+}
+.google-icon {
+  width: 23.5px;
+  height: 32px;
+  padding: 5px 0px 6px 7.75px;
+  gap: 0px;
+  /* opacity: 0px; */
+}
+.google-text {
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26.1px;
+  letter-spacing: -0.30000001192092896px;
+  text-align: center;
+  color: #cccccc;
+  width: 145px;
+  height: 27px;
+  gap: 0px;
+  /* opacity: 0px; */
+}
+.account-btn {
+  width: 50%;
+  height: Hug (48px) px;
+  padding: 13px 35px 13px 35px;
+  gap: 10px;
+  border-radius: 4px;
+  /* opacity: 0px; */
+  justify-content: center;
+  margin: auto;
+  margin-top: 50px;
+  background: linear-gradient(
+    91.73deg,
+    #4b63dd -2.99%,
+    rgba(5, 36, 191, 0.99) 95.8%
+  );
+}
+.sign-div {
+  width: 70%;
+  height: Hug (25px) px;
+  gap: 13px;
+  /* opacity: 0px; */
+  margin: auto;
+  margin-top: 25px;
+}
+.sign-div > p {
+  color: #909296;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24.8px;
+  text-align: center;
+  width: 100%;
+  height: 25px;
+  gap: 0px;
+  /* opacity: 0px; */
+  cursor: pointer;
+}
+.sign-div > span {
+  width: 50px;
+  height: 25px;
+  gap: 0px;
+  /* opacity: 0px; */
+  color: #c1c2c5;
+  /* //styleName: Medium ; */
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24.8px;
+  text-align: center;
+}
+.account-btn > button {
+  font-family: Open Sans;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21.7px;
+  text-align: left;
+  width: 125px;
+  height: 22px;
+  gap: 0px;
+  opacity: 0px;
+  color: #ffffff;
+}
+
+.foot-div {
+  background-color: #121212;
+  width: Fill (1, 440px) px;
+  height: 8vh;
+  padding: 20px 100px 20px 100px;
+  gap: 10px;
+  border: 1px 0px 0px 0px;
+  /* opacity: 0px; */
+  margin-top: 95px;
+}
+p {
+  width: 100%;
+  height: 19px;
+  gap: 0px;
+  /* opacity: 0px; */
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.6px;
+  text-align: center;
+  color: #5c5f66;
+}

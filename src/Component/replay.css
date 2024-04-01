@@ -1,0 +1,104 @@
+.replay-box {
+  width: 790px;
+  height: 534px;
+  gap: 0px;
+  border-radius: 8px;
+  border: 1px;
+  /* opacity: 0px; */
+  background: #141517;
+  border: 1px solid;
+  border-image-source: linear-gradient(180deg, #4a5055 0%, #2a2f32 100%);
+
+  position: absolute;
+  top: 160px; /* Adjust the top position as needed */
+  z-index: 999;
+  right: 350px;
+}
+.f-div {
+  width: Fixed (752px) px;
+  height: Fixed (38px) px;
+  padding: 20px 32px 20px 32px;
+  gap: 10px;
+  border-radius: 8px 8px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background: #23272c;
+  border: 1px solid #41464b;
+}
+.to {
+  width: Fixed (752px) px;
+  height: Hug (24px) px;
+  top: 46px;
+  gap: 8px;
+  border: 0px 0px 1px 0px;
+  opacity: 0px;
+  border-bottom: 1px solid #34383d;
+  font-family: Open Sans;
+  font-size: 19px;
+  /* font-weight: 600; */
+  line-height: 16.34px;
+  text-align: left;
+  padding: 10px;
+  padding-left: 25px;
+}
+input[type="text"],
+input[type="email"] {
+  background-color: #141517; /* Set background color */
+  border: none; /* Remove border */
+  color: #ffffff; /* Set text color */
+  /* Add padding for better appearance */
+  outline: none; /* Remove outline when focused */
+  user-select: none;
+  margin-left: 15px;
+}
+.mes {
+  margin: auto;
+  width: 98%;
+}
+.mes > textarea {
+  margin-left: 15px;
+  background-color: #141517; /* Set background color */
+  border: none; /* Remove border */
+  color: #636970; /* Set text color */
+  /* Add padding for better appearance */
+  outline: none; /* Remove outline when focused */
+  user-select: none;
+  height: 200px;
+  /* border: 2px solid red; */
+}
+textarea {
+  width: 99%;
+  margin-bottom: 10px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: none;
+}
+
+.l-div {
+  width: 100%;
+  height: Fixed (38px) px;
+  /* padding: 20px 32px 20px 32px; */
+  /* gap: 10px; */
+  border-radius: 0px 0px 8px 8px;
+  border: 1px 0px 0px 0px;
+  /* opacity: 0px; */
+  margin-top: 70px;
+  background: #23272c;
+  border: 1px solid #41464b;
+}
+.send-btn {
+  width: 125px;
+  height: 40px;
+  padding: 8px 40px 8px 24px;
+  gap: 10px;
+  border-radius: 4px;
+  opacity: 0px;
+  background: linear-gradient(
+    91.73deg,
+    #4b63dd -2.99%,
+    rgba(5, 36, 191, 0.99) 95.8%
+  );
+  /* margin-left: 5%; */
+  margin: 12px;
+}
