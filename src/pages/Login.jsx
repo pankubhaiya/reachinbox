@@ -5,7 +5,17 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const [token, setToken] = useState("");
 
-  
+  useEffect(() => {
+    // Parse the URL to extract the token
+    const urlParams = new URLSearchParams(window.location.search);
+    const tokenFromUrl = urlParams.get("token");
+    
+    // Set the token in the component's state
+    if (tokenFromUrl) {
+      setToken(tokenFromUrl);
+    }
+  }, []);
+  console.log("token"+ token)
   return (
     <div className="w-full h-fit bg-black">
       <div className="head-div">
@@ -20,7 +30,7 @@ const Login = () => {
         <div className="data-div">
           <h1>Create a new account</h1>
 
-          <a href="https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reachinbox-plum.vercel.app/home">
+          <a href="https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://frontend.com">
             <div className="google">
               <FaGoogle  className="google-icon text-white" />
               <button className="google-text">Sign Up with Google</button>
