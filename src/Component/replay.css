@@ -1,5 +1,5 @@
 .replay-box {
-  width: 790px;
+  width: 810px;
   height: 534px;
   gap: 0px;
   border-radius: 8px;
@@ -12,7 +12,7 @@
   position: absolute;
   top: 160px; /* Adjust the top position as needed */
   z-index: 999;
-  right: 350px;
+  right: 340px;
 }
 .f-div {
   width: Fixed (752px) px;

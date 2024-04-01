@@ -11,15 +11,18 @@ import { FaRegSmile } from "react-icons/fa";
 import { FaUserMinus } from "react-icons/fa";
 import { SlArrowLeft } from "react-icons/sl";
 import { SlArrowRight } from "react-icons/sl";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Replay = () => {
-  const { isMessageBoxOpen, setIsMessageBoxOpen, email, name,threadid ,token} =
+  const { isMessageBoxOpen, setIsMessageBoxOpen,fromEmail,toEmail,subject, email, name,threadid ,token,} =
     useEmailContext();
   const handleClick = () => {
     setIsMessageBoxOpen(false);
   };
-  const [toEmail, setToEmail] = useState('');
-  const [fromEmail, setFromEmail] = useState('');
-  const [subject, setSubject] = useState('');
+  console.log(fromEmail,toEmail,subject, email, name,threadid)
+  const [rtoEmail, setToEmail] = useState(fromEmail);
+  const [rfromEmail, setFromEmail] = useState(email);
+  const [rsubject, setSubject] = useState(subject);
   const [message, setMessage] = useState('');
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -48,14 +51,14 @@ const Replay = () => {
       // Handle success
       console.log('Email sent successfully');
     } catch (error) {
-        alert("Internal server error")
+      toast.error(error.message);
       console.error('There was an error sending the email:', error.message);
     }
   };
   return (
     <div className="replay-box">
       <div className="f-div flex justify-between">
-        <div className="text-[#BAB9BD]">Reply</div>
+        <div className="text-[#BAB9BD] cursor-pointer">Reply</div>
         <div
           className="text-[#FFFFFF] hover:text-[#BAB9BD]"
           onClick={handleClick}

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./main.css";
 import { FiChevronDown } from "react-icons/fi";
 import { MdOutlineRefresh } from "react-icons/md";
@@ -13,9 +15,12 @@ import Replay from "./Replay";
 import Delete from "./Delete";
 import Dropdown from "./Dropdown";
 const Main = () => {
-  const { emails, email, name, isMessageBoxOpen, isToggled, token } =
+  const { emails, email, name, isMessageBoxOpen,setIsMessageBoxOpen, isToggled, token } =
     useEmailContext();
   const [isDrop, SetDrop] = useState(false);
+  const handleopenboxClick = () => {
+    setIsMessageBoxOpen(true);
+  };
   const fetchRefreshApi = () => {
     // Make the GET request
     console.log("refresh");
@@ -34,8 +39,15 @@ const Main = () => {
       })
       .then((data) => {
         // Set response data in state
-        alert("Reset the data");
-        window.location.reload();
+        setTimeout(() => {
+          toast.success("Refresh successfully.");
+        }, 100);
+
+        // Perform other actions after a longer delay
+        setTimeout(() => {
+          window.location.reload();
+          Navigate("/home");
+        }, 5000);
       })
       .catch((error) => {
         // Handle any errors
@@ -187,7 +199,7 @@ const Main = () => {
           <div>
             <TreadData />
           </div>
-          <div>
+          <div onClick={handleopenboxClick}>
             <div
               className="reply-btn flex text-[#FFFFFF]"
               style={{ position: "absolute", bottom: "-40px" }}

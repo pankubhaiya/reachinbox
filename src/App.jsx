@@ -7,7 +7,8 @@ import Home from "./pages/Home/Home";
 import { EmailProvider } from "./Component/Content";
 import { Route, Routes } from "react-router-dom";
 import Switcher from "./Component/Swith";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
         </Routes>
     
       </EmailProvider>
+      <ToastContainer />
       {/* <Switcher /> */}
     </>
   );

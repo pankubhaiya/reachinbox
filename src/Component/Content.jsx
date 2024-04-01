@@ -15,10 +15,14 @@ export const EmailProvider = ({ children }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [threadid, setthreadid] = useState(null);
-  const [token, setToken] = useState('');
-  const navigat = useNavigate()
+  const [fromEmail,setFrom]= useState("")
+  const [toEmail,setTo]= useState("")
+  const [subject,setSubject]= useState("")
+  
+  const [token, setToken] = useState("");
+  const navigat = useNavigate();
   console.log(name, email);
-  // const token =
+  // const tokenFromStorage =
   //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiamFpbmtyaXNoYW5rdW1hcjZAZ21haWwuY29tIiwiaWQiOjM3LCJmaXJzdE5hbWUiOiJrcmlzaGFuIGt1bWFyIiwibGFzdE5hbWUiOiJqYWluIn0sImlhdCI6MTcxMTg5MjIzOCwiZXhwIjoxNzQzNDI4MjM4fQ.CRrjJA6x9AaL6kUoV1rVeGUW93x6uNe0SNm4TAUDoOk";
 
   useEffect(() => {
@@ -27,11 +31,11 @@ export const EmailProvider = ({ children }) => {
     // If the token exists in local storage, set it in the component's state
     if (tokenFromStorage) {
       setToken(tokenFromStorage);
-      navigat("/home")
+      navigat("/home");
     }
-    // else{
-    //   navigat("/")
-    // }
+    else{
+      navigat("/")
+    }
     const fetchData = async () => {
       try {
         const response = await fetch(
@@ -127,6 +131,7 @@ export const EmailProvider = ({ children }) => {
         isMessageBoxOpen,
         isToggled,
         threadid,
+        fromEmail,toEmail,subject,setSubject,setTo,setFrom,
         setthreadid,
         setIsToggled,
         setIsMessageBoxOpen,
