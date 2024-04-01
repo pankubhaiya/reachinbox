@@ -1,5 +1,6 @@
 // EmailContext.js
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const EmailContext = createContext();
 
@@ -14,27 +15,28 @@ export const EmailProvider = ({ children }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [threadid, setthreadid] = useState(null);
-  const [Token, setToken] = useState('');
+  const [token, setToken] = useState('');
+  const navigat = useNavigate()
   console.log(name, email);
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiamFpbmtyaXNoYW5rdW1hcjZAZ21haWwuY29tIiwiaWQiOjM3LCJmaXJzdE5hbWUiOiJrcmlzaGFuIGt1bWFyIiwibGFzdE5hbWUiOiJqYWluIn0sImlhdCI6MTcxMTg5MjIzOCwiZXhwIjoxNzQzNDI4MjM4fQ.CRrjJA6x9AaL6kUoV1rVeGUW93x6uNe0SNm4TAUDoOk";
+  // const token =
+  //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiamFpbmtyaXNoYW5rdW1hcjZAZ21haWwuY29tIiwiaWQiOjM3LCJmaXJzdE5hbWUiOiJrcmlzaGFuIGt1bWFyIiwibGFzdE5hbWUiOiJqYWluIn0sImlhdCI6MTcxMTg5MjIzOCwiZXhwIjoxNzQzNDI4MjM4fQ.CRrjJA6x9AaL6kUoV1rVeGUW93x6uNe0SNm4TAUDoOk";
+
   useEffect(() => {
-    // Check if the token exists in local storage
     const tokenFromStorage = localStorage.getItem("token");
 
     // If the token exists in local storage, set it in the component's state
     if (tokenFromStorage) {
       setToken(tokenFromStorage);
+    }else{
+      navigat("/")
     }
-  }, []);
-  useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
           "https://hiring.reachinbox.xyz/api/v1/onebox/list",
           {
             headers: {
-              Authorization: `Bearer ${token}`,
+              Authorization: `Bearer ${tokenFromStorage}`,
             },
           }
         );
