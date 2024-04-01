@@ -75,9 +75,9 @@ const Main = () => {
                 <span className="text-[#FFFFFF]">25/25</span> Inboxes selected
               </p>
             </div>
-            <div>
+            <div onClick={handleClick}>
               <div className="refresh-div hover:bg-[#FFFFF]">
-                <MdOutlineRefresh size={20} onClick={handleClick}  />
+                <MdOutlineRefresh size={20}   />
               </div>
             </div>
           </div>
