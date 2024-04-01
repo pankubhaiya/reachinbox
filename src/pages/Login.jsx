@@ -30,7 +30,7 @@ const Login = () => {
         <div className="data-div">
           <h1>Create a new account</h1>
 
-          <a href="https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://frontend.com">
+          <a href="https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reachinbox-plum.vercel.app/home">
             <div className="google">
               <FaGoogle  className="google-icon text-white" />
               <button className="google-text">Sign Up with Google</button>
